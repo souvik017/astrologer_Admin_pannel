@@ -1,48 +1,47 @@
 import { BRAND } from '../../types/brand';
-import BrandOne from '../../images/brand/brand-01.svg';
-import BrandTwo from '../../images/brand/brand-02.svg';
-import BrandThree from '../../images/brand/brand-03.svg';
-import BrandFour from '../../images/brand/brand-04.svg';
-import BrandFive from '../../images/brand/brand-05.svg';
+import UserOne from "../../images/user/user-01.png"
+import UserTwo from "../../images/user/user-02.png"
+import UserThree from "../../images/user/user-03.png"
+import UserFour from "../../images/user/user-04.png"
 
 const brandData: BRAND[] = [
   {
-    logo: BrandOne,
-    name: 'Google',
+    logo: UserOne,
+    name: 'Sayan Paul',
     visitors: 7894561230,
-    revenues: 'Hindi , English and Bengali',
+    revenues: 200,
     sales: 5,
     conversion: 4.8,
   },
   {
-    logo: BrandTwo,
-    name: 'Twitter',
+    logo: UserTwo,
+    name: 'Ujjal Shastri',
     visitors: 7894561230,
-    revenues: 'Hindi , English and Bengali',
+    revenues: 200,
     sales: 5,
     conversion: 4.3,
   },
   {
-    logo: BrandThree,
-    name: 'Github',
+    logo: UserThree,
+    name: 'Jane Smith',
     visitors: 7894561230,
-    revenues: 'Hindi , English and Bengali',
+    revenues: 200,
     sales: 5,
     conversion: 3.7,
   },
   {
-    logo: BrandFour,
-    name: 'Vimeo',
+    logo: UserFour,
+    name: 'Jane Smith',
     visitors: 7894561230,
-    revenues: 'Hindi , English and Bengali',
+    revenues: 400,
     sales: 5,
     conversion: 2.5,
   },
   {
-    logo: BrandFive,
-    name: 'Facebook',
+    logo: UserFour,
+    name: 'Jane Smith',
     visitors: 7894561230,
-    revenues: 'Hindi , English and Bengali',
+    revenues: 200,
     sales: 5,
     conversion: 4.2,
   },
@@ -69,7 +68,7 @@ const TableOne = () => {
           </div>
           <div className="p-2.5 text-center xl:p-5">
             <h5 className="text-sm font-medium uppercase xsm:text-base">
-              Languages
+            Revenue
             </h5>
           </div>
           <div className="hidden p-2.5 text-center sm:block xl:p-5">

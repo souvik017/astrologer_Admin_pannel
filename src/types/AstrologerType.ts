@@ -4,6 +4,6 @@ type AstrologerType = {
     contactNo: string;
     gender: 'Male' | 'Female';
     isVerified: boolean;
-    chatRequest: number; // Number of chat requests
-    callRequest: number; // Number of call requests
+    chatRequest: number;
+    callRequest: number;
   };

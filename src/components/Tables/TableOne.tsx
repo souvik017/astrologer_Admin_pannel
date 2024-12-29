@@ -88,8 +88,8 @@ const TableOne = () => {
             key={key}
           >
             <div className="flex items-center gap-3 p-2.5 xl:p-5">
-              <div className="flex-shrink-0">
-                <img src={brand.logo} alt="Brand" />
+              <div className="flex-shrink-0 w-10 h-10">
+                <img src={brand.logo} alt="Brand " className='w-full h-full' />
               </div>
               <p className="hidden text-black dark:text-white sm:block">
                 {brand.name}

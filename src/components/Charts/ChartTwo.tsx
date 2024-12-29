@@ -44,7 +44,7 @@ const options: ApexOptions = {
   },
 
   xaxis: {
-    categories: ['M', 'T', 'W', 'T', 'F', 'S', 'S'],
+    categories: ['Mon', 'Tus', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
   },
   legend: {
     position: 'top',
@@ -73,12 +73,16 @@ const ChartTwo: React.FC = () => {
   const [state, setState] = useState<ChartTwoState>({
     series: [
       {
-        name: 'Sales',
+        name: 'Chat Request',
         data: [44, 55, 41, 67, 22, 43, 65],
       },
       {
-        name: 'Revenue',
+        name: 'Call Request',
         data: [13, 23, 20, 8, 13, 27, 15],
+      },
+      {
+        name: 'Vedio Call Request',
+        data: [2, 28, 18, 18, 15, 27, 10],
       },
     ],
   });
@@ -95,11 +99,11 @@ const ChartTwo: React.FC = () => {
       <div className="mb-4 justify-between gap-4 sm:flex">
         <div>
           <h4 className="text-xl font-semibold text-black dark:text-white">
-            Profit this week
+          Total Request 
           </h4>
         </div>
         <div>
-          <div className="relative z-20 inline-block">
+          {/* <div className="relative z-20 inline-block">
             <select
               name="#"
               id="#"
@@ -128,7 +132,7 @@ const ChartTwo: React.FC = () => {
                 />
               </svg>
             </span>
-          </div>
+          </div> */}
         </div>
       </div>
 

@@ -215,7 +215,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
 {/* <!-- Menu Item Astrologer --> */}
               <SidebarLinkGroup
                 activeCondition={
-                  pathname === '/forms' || pathname.includes('forms')
+                  pathname === '/astrologers' || pathname.includes('astrologers')
                 }
               >
                 {(handleClick, open) => {
@@ -224,8 +224,8 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                       <NavLink
                         to="#"
                         className={`group relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 ${
-                          (pathname === '/forms' ||
-                            pathname.includes('forms')) &&
+                          (pathname === '/astrologers' ||
+                            pathname.includes('astrologers')) &&
                           'bg-graydark dark:bg-meta-4'
                         }`}
                         onClick={(e) => {
@@ -266,9 +266,20 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                         }`}
                       >
                         <ul className="mt-4 mb-5.5 flex flex-col gap-2.5 pl-6">
+                        <li>
+                            <NavLink
+                              to="/astrologers/manageaiAstrologers"
+                              className={({ isActive }) =>
+                                'group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white ' +
+                                (isActive && '!text-white')
+                              }
+                            >
+                           Manage AI Astrologer
+                            </NavLink>
+                          </li>
                           <li>
                             <NavLink
-                              to="/manageAstrologers"
+                              to="/astrologers/manageAstrologers"
                               className={({ isActive }) =>
                                 'group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white ' +
                                 (isActive && '!text-white')
@@ -279,24 +290,13 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                           </li>
                           <li>
                             <NavLink
-                              to="/pendingRequest"
+                              to="/astrologers/pendingRequest"
                               className={({ isActive }) =>
                                 'group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white ' +
                                 (isActive && '!text-white')
                               }
                             >
                             Pending Request
-                            </NavLink>
-                          </li>
-                          <li>
-                            <NavLink
-                              to="/forms/form-layout"
-                              className={({ isActive }) =>
-                                'group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white ' +
-                                (isActive && '!text-white')
-                              }
-                            >
-                           Block Astrologers
                             </NavLink>
                           </li>
                         </ul>
@@ -342,7 +342,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
               {/* <!-- Menu Item Forms --> */}
               <SidebarLinkGroup
                 activeCondition={
-                  pathname === '/forms' || pathname.includes('forms')
+                  pathname === '/astromall' || pathname.includes('astromall')
                 }
               >
                 {(handleClick, open) => {
@@ -351,8 +351,8 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                       <NavLink
                         to="#"
                         className={`group relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 ${
-                          (pathname === '/forms' ||
-                            pathname.includes('forms')) &&
+                          (pathname === '/astromall' ||
+                            pathname.includes('astromall')) &&
                           'bg-graydark dark:bg-meta-4'
                         }`}
                         onClick={(e) => {
@@ -362,20 +362,11 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                             : setSidebarExpanded(true);
                         }}
                       >
-                        <svg
-                    className="fill-current"
-                    width="18"
-                    height="18"
-                    viewBox="0 0 18 18"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M15.7499 2.9812H14.2874V2.36245C14.2874 2.02495 14.0062 1.71558 13.6405 1.71558C13.2749 1.71558 12.9937 1.99683 12.9937 2.36245V2.9812H4.97803V2.36245C4.97803 2.02495 4.69678 1.71558 4.33115 1.71558C3.96553 1.71558 3.68428 1.99683 3.68428 2.36245V2.9812H2.2499C1.29365 2.9812 0.478027 3.7687 0.478027 4.75308V14.5406C0.478027 15.4968 1.26553 16.3125 2.2499 16.3125H15.7499C16.7062 16.3125 17.5218 15.525 17.5218 14.5406V4.72495C17.5218 3.7687 16.7062 2.9812 15.7499 2.9812ZM1.77178 8.21245H4.1624V10.9968H1.77178V8.21245ZM5.42803 8.21245H8.38115V10.9968H5.42803V8.21245ZM8.38115 12.2625V15.0187H5.42803V12.2625H8.38115ZM9.64678 12.2625H12.5999V15.0187H9.64678V12.2625ZM9.64678 10.9968V8.21245H12.5999V10.9968H9.64678ZM13.8374 8.21245H16.228V10.9968H13.8374V8.21245ZM2.2499 4.24683H3.7124V4.83745C3.7124 5.17495 3.99365 5.48433 4.35928 5.48433C4.7249 5.48433 5.00615 5.20308 5.00615 4.83745V4.24683H13.0499V4.83745C13.0499 5.17495 13.3312 5.48433 13.6968 5.48433C14.0624 5.48433 14.3437 5.20308 14.3437 4.83745V4.24683H15.7499C16.0312 4.24683 16.2562 4.47183 16.2562 4.75308V6.94683H1.77178V4.75308C1.77178 4.47183 1.96865 4.24683 2.2499 4.24683ZM1.77178 14.5125V12.2343H4.1624V14.9906H2.2499C1.96865 15.0187 1.77178 14.7937 1.77178 14.5125ZM15.7499 15.0187H13.8374V12.2625H16.228V14.5406C16.2562 14.7937 16.0312 15.0187 15.7499 15.0187Z"
-                      fill=""
-                    />
-                  </svg>
-                        Horoscope
+                       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="size-6">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 21v-7.5a.75.75 0 0 1 .75-.75h3a.75.75 0 0 1 .75.75V21m-4.5 0H2.36m11.14 0H18m0 0h3.64m-1.39 0V9.349M3.75 21V9.349m0 0a3.001 3.001 0 0 0 3.75-.615A2.993 2.993 0 0 0 9.75 9.75c.896 0 1.7-.393 2.25-1.016a2.993 2.993 0 0 0 2.25 1.016c.896 0 1.7-.393 2.25-1.015a3.001 3.001 0 0 0 3.75.614m-16.5 0a3.004 3.004 0 0 1-.621-4.72l1.189-1.19A1.5 1.5 0 0 1 5.378 3h13.243a1.5 1.5 0 0 1 1.06.44l1.19 1.189a3 3 0 0 1-.621 4.72M6.75 18h3.75a.75.75 0 0 0 .75-.75V13.5a.75.75 0 0 0-.75-.75H6.75a.75.75 0 0 0-.75.75v3.75c0 .414.336.75.75.75Z" />
+</svg>
+
+                        Astro Mall
                         <svg
                           className={`absolute right-4 top-1/2 -translate-y-1/2 fill-current ${
                             open && 'rotate-180'
@@ -403,35 +394,35 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                         <ul className="mt-4 mb-5.5 flex flex-col gap-2.5 pl-6">
                           <li>
                             <NavLink
-                              to="/forms/form-elements"
+                              to="/astromall/products"
                               className={({ isActive }) =>
                                 'group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white ' +
                                 (isActive && '!text-white')
                               }
                             >
-                            Daily Horoscope
+                           Products
                             </NavLink>
                           </li>
                           <li>
                             <NavLink
-                              to="/forms/form-layout"
+                              to="/astromall/categories"
                               className={({ isActive }) =>
                                 'group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white ' +
                                 (isActive && '!text-white')
                               }
                             >
-                            Weekly Horoscope
+                           Categories
                             </NavLink>
                           </li>
                           <li>
                             <NavLink
-                              to="/forms/form-layout"
+                              to="/astromall/orders"
                               className={({ isActive }) =>
                                 'group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white ' +
                                 (isActive && '!text-white')
                               }
                             >
-                           Yearly Horoscope
+                           Orders
                             </NavLink>
                           </li>
                         </ul>
@@ -482,7 +473,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
               {/* <!-- Menu Item Tables --> */}
 
   {/* <!-- Menu Item Blogs --> */}
-              <li>
+              {/* <li>
                 <NavLink
                   to="/profile"
                   className={`group relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 ${
@@ -495,11 +486,11 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
 
                   Blogs
                 </NavLink>
-              </li>
+              </li> */}
   {/* <!-- Menu Item Blogs --> */}
 
     {/* <!-- Menu Item News --> */}
-              <li>
+              {/* <li>
                 <NavLink
                   to="/profile"
                   className={`group relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 ${
@@ -512,11 +503,11 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
 
                  News
                 </NavLink>
-              </li>
+              </li> */}
   {/* <!-- Menu Item News --> */}
 
   {/* <!-- Menu Item Videos --> */}
-              <li>
+              {/* <li>
                 <NavLink
                   to="/profile"
                   className={`group relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 ${
@@ -529,15 +520,15 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
 
                   Videos
                 </NavLink>
-              </li>
+              </li> */}
   {/* <!-- Menu Item Videos --> */}
 
   {/* <!-- Menu Item Banner --> */}
               <li>
                 <NavLink
-                  to="/profile"
+                  to="/banner"
                   className={`group relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 ${
-                    pathname.includes('profile') && 'bg-graydark dark:bg-meta-4'
+                    pathname.includes('banner') && 'bg-graydark dark:bg-meta-4'
                   }`}
                 >
                   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="size-6">
@@ -550,11 +541,11 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
   {/* <!-- Menu Item Banner --> */}
 
     {/* <!-- Menu Item Stories --> */}
-            <li>
+            {/* <li>
                 <NavLink
-                  to="/profile"
+                  to="/stories"
                   className={`group relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 ${
-                    pathname.includes('profile') && 'bg-graydark dark:bg-meta-4'
+                    pathname.includes('stories') && 'bg-graydark dark:bg-meta-4'
                   }`}
                 >
                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="size-6">
@@ -564,9 +555,287 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
 
                 Stories
                 </NavLink>
-              </li>
+              </li> */}
   {/* <!-- Menu Item Stories --> */}
 
+
+  {/* menu items send Notifications */}
+  <li>
+  <NavLink
+                  to="/sendNotifications"
+                  className={`group relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 ${
+                    pathname.includes('sendNotifications') && 'bg-graydark dark:bg-meta-4'
+                  }`}
+                >
+               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="size-6">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M14.857 17.082a23.848 23.848 0 0 0 5.454-1.31A8.967 8.967 0 0 1 18 9.75V9A6 6 0 0 0 6 9v.75a8.967 8.967 0 0 1-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 0 1-5.714 0m5.714 0a3 3 0 1 1-5.714 0M3.124 7.5A8.969 8.969 0 0 1 5.292 3m13.416 0a8.969 8.969 0 0 1 2.168 4.5" />
+</svg>
+               Send Notifiactons
+                </NavLink>
+              </li>
+{/* menu items send Notifications */}
+
+{/* menu items wallet history */}
+
+<SidebarLinkGroup
+                activeCondition={
+                  pathname === '/wallet' || pathname.includes('wallet')
+                }
+              >
+                {(handleClick, open) => {
+                  return (
+                    <React.Fragment>
+                      <NavLink
+                        to="#"
+                        className={`group relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 ${
+                          (pathname === '/wallet' ||
+                            pathname.includes('wallet')) &&
+                          'bg-graydark dark:bg-meta-4'
+                        }`}
+                        onClick={(e) => {
+                          e.preventDefault();
+                          sidebarExpanded
+                            ? handleClick()
+                            : setSidebarExpanded(true);
+                        }}
+                      >
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="size-6">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M15 8.25H9m6 3H9m3 6-3-3h1.5a3 3 0 1 0 0-6M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+</svg>
+
+                    Wallet History
+                        <svg
+                          className={`absolute right-4 top-1/2 -translate-y-1/2 fill-current ${
+                            open && 'rotate-180'
+                          }`}
+                          width="20"
+                          height="20"
+                          viewBox="0 0 20 20"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            fillRule="evenodd"
+                            clipRule="evenodd"
+                            d="M4.41107 6.9107C4.73651 6.58527 5.26414 6.58527 5.58958 6.9107L10.0003 11.3214L14.4111 6.91071C14.7365 6.58527 15.2641 6.58527 15.5896 6.91071C15.915 7.23614 15.915 7.76378 15.5896 8.08922L10.5896 13.0892C10.2641 13.4147 9.73651 13.4147 9.41107 13.0892L4.41107 8.08922C4.08563 7.76378 4.08563 7.23614 4.41107 6.9107Z"
+                            fill=""
+                          />
+                        </svg>
+                      </NavLink>
+                      {/* <!-- Dropdown Menu Start --> */}
+                      <div
+                        className={`translate transform overflow-hidden ${
+                          !open && 'hidden'
+                        }`}
+                      >
+                        <ul className="mt-4 mb-5.5 flex flex-col gap-2.5 pl-6">
+                          <li>
+                            <NavLink
+                              to="/wallet/creditHistory"
+                              className={({ isActive }) =>
+                                'group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white ' +
+                                (isActive && '!text-white')
+                              }
+                            >
+                          Cerdit History
+                            </NavLink>
+                          </li>
+                          <li>
+                            <NavLink
+                              to="/wallet/debitHistory"
+                              className={({ isActive }) =>
+                                'group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white ' +
+                                (isActive && '!text-white')
+                              }
+                            >
+                          Debit History
+                            </NavLink>
+                          </li>
+                          <li>
+                            <NavLink
+                              to="/wallet/pending"
+                              className={({ isActive }) =>
+                                'group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white ' +
+                                (isActive && '!text-white')
+                              }
+                            >
+                          Pending Request
+                            </NavLink>
+                          </li>
+                        </ul>
+                      </div>
+                      {/* <!-- Dropdown Menu End --> */}
+                    </React.Fragment>
+                  );
+                }}
+              </SidebarLinkGroup>
+
+{/* menu items wallet history */}
+
+
+{/* menu items App history */}
+<SidebarLinkGroup
+                activeCondition={
+                  pathname === '/history' || pathname.includes('history')
+                }
+              >
+                {(handleClick, open) => {
+                  return (
+                    <React.Fragment>
+                      <NavLink
+                        to="#"
+                        className={`group relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 ${
+                          (pathname === '/history' ||
+                            pathname.includes('history')) &&
+                          'bg-graydark dark:bg-meta-4'
+                        }`}
+                        onClick={(e) => {
+                          e.preventDefault();
+                          sidebarExpanded
+                            ? handleClick()
+                            : setSidebarExpanded(true);
+                        }}
+                      >
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="size-6">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0 3.181 3.183a8.25 8.25 0 0 0 13.803-3.7M4.031 9.865a8.25 8.25 0 0 1 13.803-3.7l3.181 3.182m0-4.991v4.99" />
+</svg>
+
+
+                    App History
+                        <svg
+                          className={`absolute right-4 top-1/2 -translate-y-1/2 fill-current ${
+                            open && 'rotate-180'
+                          }`}
+                          width="20"
+                          height="20"
+                          viewBox="0 0 20 20"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            fillRule="evenodd"
+                            clipRule="evenodd"
+                            d="M4.41107 6.9107C4.73651 6.58527 5.26414 6.58527 5.58958 6.9107L10.0003 11.3214L14.4111 6.91071C14.7365 6.58527 15.2641 6.58527 15.5896 6.91071C15.915 7.23614 15.915 7.76378 15.5896 8.08922L10.5896 13.0892C10.2641 13.4147 9.73651 13.4147 9.41107 13.0892L4.41107 8.08922C4.08563 7.76378 4.08563 7.23614 4.41107 6.9107Z"
+                            fill=""
+                          />
+                        </svg>
+                      </NavLink>
+                      {/* <!-- Dropdown Menu Start --> */}
+                      <div
+                        className={`translate transform overflow-hidden ${
+                          !open && 'hidden'
+                        }`}
+                      >
+                        <ul className="mt-4 mb-5.5 flex flex-col gap-2.5 pl-6">
+                          <li>
+                          <SidebarLinkGroup
+                activeCondition={
+                  pathname === '/history/chat' || pathname.includes('history/chat')
+                }
+              >
+                {(handleClick, open) => {
+                  return (
+                    <React.Fragment>
+                      <NavLink
+                        to="#"
+                        className={`group relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 ${
+                          (pathname === '/history/chat' ||
+                            pathname.includes('history/chat')) &&
+                          'bg-graydark dark:bg-meta-4'
+                        }`}
+                        onClick={(e) => {
+                          e.preventDefault();
+                          sidebarExpanded
+                            ? handleClick()
+                            : setSidebarExpanded(true);
+                        }}
+                      >
+                    Chat History
+                        <svg
+                          className={`absolute right-4 top-1/2 -translate-y-1/2 fill-current ${
+                            open && 'rotate-180'
+                          }`}
+                          width="20"
+                          height="20"
+                          viewBox="0 0 20 20"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            fillRule="evenodd"
+                            clipRule="evenodd"
+                            d="M4.41107 6.9107C4.73651 6.58527 5.26414 6.58527 5.58958 6.9107L10.0003 11.3214L14.4111 6.91071C14.7365 6.58527 15.2641 6.58527 15.5896 6.91071C15.915 7.23614 15.915 7.76378 15.5896 8.08922L10.5896 13.0892C10.2641 13.4147 9.73651 13.4147 9.41107 13.0892L4.41107 8.08922C4.08563 7.76378 4.08563 7.23614 4.41107 6.9107Z"
+                            fill=""
+                          />
+                        </svg>
+                      </NavLink>
+                      {/* <!-- Dropdown Menu Start --> */}
+                      <div
+                        className={`translate transform overflow-hidden ${
+                          !open && 'hidden'
+                        }`}
+                      >
+                        <ul className="mt-4 mb-5.5 flex flex-col gap-2.5 pl-6">
+                          <li>
+                            <NavLink
+                              to="/history/chat/astrologer"
+                              className={({ isActive }) =>
+                                'group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white ' +
+                                (isActive && '!text-white')
+                              }
+                            >
+                          Astrologer History
+                            </NavLink>
+                          </li>
+                          <li>
+                            <NavLink
+                              to="/history/chat/ai_astrologer"
+                              className={({ isActive }) =>
+                                'group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white ' +
+                                (isActive && '!text-white')
+                              }
+                            >
+                          Ai Astrologer History
+                            </NavLink>
+                          </li>
+                        </ul>
+                      </div>
+                      {/* <!-- Dropdown Menu End --> */}
+                    </React.Fragment>
+                  );
+                }}
+              </SidebarLinkGroup>
+                          </li>
+                          <li>
+                            <NavLink
+                              to="/history/call"
+                              className={({ isActive }) =>
+                                'group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white ' +
+                                (isActive && '!text-white')
+                              }
+                            >
+                          Call History
+                            </NavLink>
+                          </li>
+                          <li>
+                            <NavLink
+                              to="/history/video_call"
+                              className={({ isActive }) =>
+                                'group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white ' +
+                                (isActive && '!text-white')
+                              }
+                            >
+                          Vedio Call History
+                            </NavLink>
+                          </li>
+                        </ul>
+                      </div>
+                      {/* <!-- Dropdown Menu End --> */}
+                    </React.Fragment>
+                  );
+                }}
+              </SidebarLinkGroup>
+{/* menu items App history */}
               {/* <!-- Menu Item Settings --> */}
               <li>
                 <NavLink

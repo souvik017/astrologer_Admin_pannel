@@ -1,73 +1,73 @@
-import { useState } from "react"
 import Breadcrumb from "../../components/Breadcrumbs/Breadcrumb"
 import UserOne from "../../images/user/user-01.png"
 import UserTwo from "../../images/user/user-02.png"
 import UserThree from "../../images/user/user-03.png"
 import UserFour from "../../images/user/user-04.png"
-import AddAstrologerModal from "../../components/Modals/AddAstrologer"
 
-
-
-const userData: AstrologerType[] = [
+  const users = [
     {
-      image: UserOne,
-      name: 'Pandit Ujjal Shastri',
-      contactNo: '123-456-7890',
-      gender: 'Male',
-      isVerified: true,
-      chatRequest: 5,
-      callRequest: 3,
-    },
-    {
-      image: UserTwo,
-      name: 'Jane Smith',
-      contactNo: '987-654-3210',
-      gender: 'Female',
+      _id: "673a8fe166fe9594396b4e7c",
+      name: "John Doe",
+      experience: 10,
+      specialities: ["Vedic Astrology", "Numerology"],
+      rating: 0,
+      totalRatingsCount: 0,
+      pricePerCallMinute: 2.5,
+      pricePerChatMinute: 1.5,
+      available: true,
       isVerified: false,
-      chatRequest: 2,
-      callRequest: 1,
+      isFeatured: false,
+      gender: "Male",
+      walletBalance: 100,
+      avatar: UserFour,
+      createdAt: "2024-11-18T00:52:49.844+00:00",
+      updatedAt: "2024-11-18T00:52:49.844+00:00"
     },
     {
-      image: UserThree,
-      name: 'Alice Johnson',
-      contactNo: '456-789-0123',
-      gender: 'Female',
+      _id: "873b9fe277ge9604407c5f8d",
+      name: "Jane Smith",
+      experience: 8,
+      specialities: ["Palmistry", "Tarot Reading"],
+      rating: 4.5,
+      totalRatingsCount: 120,
+      pricePerCallMinute: 3.0,
+      pricePerChatMinute: 2.0,
+      available: true,
       isVerified: true,
-      chatRequest: 10,
-      callRequest: 7,
+      isFeatured: true,
+      gender: "Female",
+      walletBalance: 50,
+      avatar: UserOne,
+      createdAt: "2024-11-19T10:30:20.744+00:00",
+      updatedAt: "2024-11-19T10:30:20.744+00:00"
     },
     {
-      image: UserFour,
-      name: 'Bob Brown',
-      contactNo: '321-654-9870',
-      gender: 'Male',
-      isVerified: false,
-      chatRequest: 0,
-      callRequest: 0,
-    },
+      _id: "973c0fe388he9715518c6g9e",
+      name: "Michael Johnson",
+      experience: 5,
+      specialities: ["Numerology", "Horoscope Reading"],
+      rating: 3.8,
+      totalRatingsCount: 50,
+      pricePerCallMinute: 2.0,
+      pricePerChatMinute: 1.8,
+      available: false,
+      isVerified: true,
+      isFeatured: false,
+      gender: "Male",
+      walletBalance: 30,
+      avatar: UserOne,
+      createdAt: "2024-11-20T15:15:10.944+00:00",
+      updatedAt: "2024-11-20T15:15:10.944+00:00"
+    }
   ];
+  
+  
+const ManageAIAstrologer = () => {
 
-const ManageAstrologer = () => {
-
-  const [isModalOpen, setIsModalOpen] = useState(false);
-
-  const handleAddAstrologer = (data: AstrologerFormData) => {
-    // Handle the form submission here
-    console.log('New Astrologer Data:', data);
-    // Add your logic to save the data
-  };
-
-    function getStatusMessage(status: boolean) {
-        if (status === true) {
-          return <p className="inline-flex rounded-full bg-opacity-10 py-1 px-3 text-sm font-medium text-success bg-success">Verified</p>;
-        } else {
-          return <p className="text-danger">Unverified</p>;
-        }
-      }
 
     return (
         <>
-          <Breadcrumb pageName="Astrologers" />
+          <Breadcrumb pageName="Block Astrologers" />
           <div className="rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark">
           <div className="py-6 px-4 md:px-6 xl:px-7.5 flex justify-between items-center">
            <div className="">
@@ -106,9 +106,8 @@ const ManageAstrologer = () => {
               </form>
             </div> 
     
-            <div className="flex items-center justify-center gap-2">
+            {/* <div className="flex items-center justify-center gap-2">
                 <button
-                    onClick={() => setIsModalOpen(true)}
                    className="rounded-md bg-blue-300 px-2 py-1 text-white font-medium hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75 dark:bg-blue-400 dark:hover:bg-blue-500 dark:focus:ring-blue-300"
                    >
                   Add Astrologer
@@ -123,7 +122,7 @@ const ManageAstrologer = () => {
                    >
                   PDF
                   </button>
-            </div>
+            </div> */}
     
           </div>
       <div className="grid grid-cols-2 sm:grid-cols-6 md:grid-cols-8 border-t border-stroke py-4.5 px-4 dark:border-strokedark md:px-6 2xl:px-7.5">
@@ -131,58 +130,54 @@ const ManageAstrologer = () => {
           <p className="font-medium text-center">Profile</p>
         </div>
         <div className="flex items-center justify-center col-span-1">
-          <p className="font-medium text-center">Contact No</p>
+        <p className="font-medium text-center">Gender</p>
+        </div>
+        <div className="flex items-center justify-center col-span-1">
+        <p className="font-medium text-center">Experience</p>
+        </div>
+        <div className="flex items-center justify-center col-span-1">
+          <p className="font-medium text-center">Rating</p>
         </div>
         {/* <div className="flex items-center justify-center col-span-2 sm:col-span-2">
           <p className="font-medium text-center">Email</p>
         </div> */}
+       
         <div className="flex items-center justify-center col-span-1">
-          <p className="font-medium text-center">Gender</p>
+          <p className="font-medium text-center">Wallet Balance</p>
         </div>
-        <div className="flex items-center justify-center col-span-1">
-          <p className="font-medium text-center">Total Request</p>
-        </div>
-        <div className="flex items-center justify-center col-span-2 sm:col-span-2">
-          <p className="font-medium text-center">Satus</p>
-        </div>
-        <div className="flex items-center justify-center col-span-1">
+
+        <div className="flex items-center justify-center col-span-2">
           <p className="font-medium text-center">Actions</p>
         </div>
       </div>
     
       {/* Table Body */}
-      {userData.map((user, key) => (
+      {users.map((user, key) => (
         <div
           className="grid grid-cols-2 sm:grid-cols-6 md:grid-cols-8 border-t border-stroke py-4.5 px-4 dark:border-strokedark md:px-6 2xl:px-7.5"
           key={key}
         >
           <div className="flex items-center col-span-2 sm:col-span-2">
             <div className="flex gap-4 justify-center items-center">
-              <img src={user.image} alt="User Profile" className="h-12.5 w-12.5 rounded-full" />
+              <img src={user.avatar} alt="User Profile" className="h-12.5 w-12.5 rounded-full" />
               <p className="text-sm text-black dark:text-white">{user.name}</p>
             </div>
-          </div>
-          <div className="flex items-center justify-center col-span-1">
-            <p className="text-sm text-black dark:text-white">{user.contactNo}</p>
           </div>
           <div className="flex items-center justify-center col-span-1 sm:col-span-1">
             <p className="text-sm text-black dark:text-white">{user.gender}</p>
           </div>
+          <div className="flex items-center justify-center col-span-1 sm:col-span-1">
+            <p className="text-sm text-black dark:text-white">{user.experience}</p>
+          </div>
           <div className="flex items-center justify-center col-span-1">
-            <p className="text-sm text-black dark:text-white flex items-center justify-center gap-1">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="size-4">
-  <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z" />
-</svg>
-                {user.callRequest} /
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="size-4">
-  <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12.76c0 1.6 1.123 2.994 2.707 3.227 1.087.16 2.185.283 3.293.369V21l4.076-4.076a1.526 1.526 0 0 1 1.037-.443 48.282 48.282 0 0 0 5.68-.494c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0 0 12 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018Z" />
-</svg> {user.chatRequest}
- </p>
+            <p className="text-sm text-black dark:text-white">{user.rating}</p>
           </div>
-          <div className="flex items-center justify-center col-span-2">
-            <p className="text-md text-black dark:text-white">{getStatusMessage(user.isVerified)}</p>
+          
+          <div className="flex items-center justify-center col-span-1 sm:col-span-1">
+            <p className="text-sm text-black dark:text-white">{user.walletBalance}</p>
           </div>
-          <div className="flex items-center justify-center col-span-1 space-x-3.5">
+          
+          <div className="flex items-center justify-center col-span-2 space-x-3.5">
                       <div className="flex items-center space-x-3.5">
                         <button className="hover:text-primary">
                           <svg
@@ -241,14 +236,10 @@ const ManageAstrologer = () => {
       ))}
     </div>
     
-    <AddAstrologerModal
-        isOpen={isModalOpen}
-        onClose={() => setIsModalOpen(false)}
-        onSubmit={handleAddAstrologer}
-      />
+    
     
         </>
       )
 }
 
-export default ManageAstrologer
+export default ManageAIAstrologer

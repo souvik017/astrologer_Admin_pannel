@@ -19,6 +19,19 @@ import DefaultLayout from './layout/DefaultLayout';
 import Customer from './pages/Customer';
 import ManageAstrologer from './pages/Astrologers/ManageAstrologer';
 import PendingRequest from './pages/Astrologers/PendingRequest';
+import BannerManagement from './pages/BannerManagement';
+import SendNotifications from './pages/SendNotifications';
+import CreditHistory from './pages/WalletHistory/CreditHistory';
+import DebitHistory from './pages/WalletHistory/DebitHistory';
+import Pending from './pages/WalletHistory/Pending';
+import AiAstrologerHistory from './pages/AppHistory/ChatHistory/AiAstrologerHistory';
+import AstrologerHistory from './pages/AppHistory/ChatHistory/AstrologerHistory';
+import VideoCallHistory from './pages/AppHistory/VideoCallHistory';
+import CallHistory from './pages/AppHistory/CallHistory';
+import Products from './pages/AstroMall/Products';
+import Categories from './pages/AstroMall/Categories';
+import Orders from './pages/AstroMall/Orders';
+import ManageAIAstrologer from './pages/Astrologers/ManageAIAstrologers';
 
 function App() {
   const [loading, setLoading] = useState<boolean>(true);
@@ -55,7 +68,7 @@ function App() {
             </>
           }
         />
-        <Route
+        {/* <Route
           path="/profile"
           element={
             <>
@@ -63,7 +76,7 @@ function App() {
               <Profile />
             </>
           }
-        />
+        /> */}
          <Route
           path="/customers"
           element={
@@ -74,7 +87,7 @@ function App() {
           }
         />
          <Route
-          path="/manageAstrologers"
+          path="/astrologers/manageAstrologers"
           element={
             <>
               <PageTitle title="Manage Astrologers | Astro Bandhan" />
@@ -83,7 +96,7 @@ function App() {
           }
         />
         <Route
-          path="/pendingRequest"
+          path="/astrologers/pendingRequest"
           element={
             <>
               <PageTitle title=" Astrologers Pending Request | Astro Bandhan" />
@@ -91,6 +104,126 @@ function App() {
             </>
           }
         />
+         <Route
+          path="/astrologers/manageaiAstrologers"
+          element={
+            <>
+              <PageTitle title=" Astrologers Pending Request | Astro Bandhan" />
+             <ManageAIAstrologer/>
+            </>
+          }
+        />
+        <Route
+          path="/banner"
+          element={
+            <>
+              <PageTitle title=" Astrologers Pending Request | Astro Bandhan" />
+            <BannerManagement/>
+            </>
+          }
+        />
+
+         <Route
+          path="/sendNotifications"
+          element={
+            <>
+              <PageTitle title=" Astrologers Send Notifications | Astro Bandhan" />
+           <SendNotifications/>
+            </>
+          }
+        />
+
+        <Route
+          path="/wallet/creditHistory"
+          element={
+            <>
+              <PageTitle title=" Astrologers Send Notifications | Astro Bandhan" />
+           <CreditHistory/>
+            </>
+          }
+        />
+        <Route
+          path="/wallet/debitHistory"
+          element={
+            <>
+              <PageTitle title=" Astrologers Send Notifications | Astro Bandhan" />
+           <DebitHistory/>
+            </>
+          }
+        />
+         <Route
+          path="/wallet/pending"
+          element={
+            <>
+              <PageTitle title=" Astrologers Send Notifications | Astro Bandhan" />
+           <Pending/>
+            </>
+          }
+        />
+         <Route
+          path="/history/chat/ai_astrologer"
+          element={
+            <>
+              <PageTitle title=" Astrologers Send Notifications | Astro Bandhan" />
+            <AiAstrologerHistory/>
+            </>
+          }
+        />
+        <Route
+          path="/history/chat/astrologer"
+          element={
+            <>
+              <PageTitle title=" Astrologers Send Notifications | Astro Bandhan" />
+            <AstrologerHistory/>
+            </>
+          }
+        />
+        <Route
+          path="/history/call"
+          element={
+            <>
+              <PageTitle title=" Astrologers Send Notifications | Astro Bandhan" />
+           <CallHistory/>
+            </>
+          }
+        />
+         <Route
+          path="/history/video_call"
+          element={
+            <>
+              <PageTitle title=" Astrologers Send Notifications | Astro Bandhan" />
+            <VideoCallHistory/>
+            </>
+          }
+        />
+        <Route
+          path="/astromall/products"
+          element={
+            <>
+              <PageTitle title=" Astrologers Send Notifications | Astro Bandhan" />
+            <Products/>
+            </>
+          }
+        />
+        <Route
+          path="/astromall/categories"
+          element={
+            <>
+              <PageTitle title=" Astrologers Send Notifications | Astro Bandhan" />
+            <Categories/>
+            </>
+          }
+        />
+        <Route
+          path="/astromall/Orders"
+          element={
+            <>
+              <PageTitle title=" Astrologers Send Notifications | Astro Bandhan" />
+            <Orders/>
+            </>
+          }
+        />
+        
         {/* <Route
           path="/forms/form-elements"
           element={
